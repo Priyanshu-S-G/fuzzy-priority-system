@@ -59,8 +59,6 @@ def run_priority_system(urgency: float, impact: float,
     score = defuzzify(aggregated)
     log(f"Defuzzified score: {score}")
 
-    # TODO: Replace score with real defuzzified crisp value
-    # Current score is dummy. Real pipeline replaces all steps above.
     label = _score_to_label(score)
 
     log(f"Final result: score={score}, label={label}")
