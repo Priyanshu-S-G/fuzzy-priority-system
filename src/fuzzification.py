@@ -1,3 +1,6 @@
+from config.membership_functions import low, medium, high
+
+
 def fuzzify(inputs: dict) -> dict:
     """
     Convert crisp input values into fuzzy membership degrees.
@@ -14,12 +17,11 @@ def fuzzify(inputs: dict) -> dict:
         dict of membership degrees per variable per fuzzy set
         e.g. {"urgency": {"low": 0.2, "medium": 0.7, "high": 0.1}, ...}
     """
-    # TODO: Replace dummy output with real membership function calls
     memberships = {}
     for var, val in inputs.items():
         memberships[var] = {
-            "low":    0.3,  # dummy
-            "medium": 0.5,  # dummy
-            "high":   0.2,  # dummy
+            "low": low(val, 0, 5),
+            "medium": medium(val, 2.5, 5, 7.5),
+            "high": high(val, 5, 10),
         }
     return memberships

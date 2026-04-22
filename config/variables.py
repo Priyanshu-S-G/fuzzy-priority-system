@@ -13,7 +13,7 @@ OUTPUT_RANGE = (0, 100)
 # Labels mapped to output score thresholds
 # Replace thresholds with defuzzified crisp value ranges
 PRIORITY_LABELS = {
-    "Low":    (0,  40),
-    "Medium": (40, 70),
-    "High":   (70, 100),
+    "Low":    (0,  30),
+    "Medium": (30, 65),
+    "High":   (65, 100),
 }

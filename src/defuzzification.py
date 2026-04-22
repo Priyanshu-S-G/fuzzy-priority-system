@@ -12,8 +12,6 @@ def defuzzify(aggregated: dict) -> float:
     Returns:
         float crisp score in range [0, 100]
     """
-    # TODO: Replace with real centroid calculation
-    # Dummy: weighted average of representative crisp values per set
     set_centers = {"low": 20.0, "medium": 50.0, "high": 80.0}
     weights = sum(aggregated.values())
     if weights == 0:

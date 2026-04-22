@@ -1,17 +1,34 @@
-# Membership function stubs
-# Replace bodies with actual triangular/trapezoidal/gaussian math
-
 def low(x, lo, mid):
-    """Returns degree of membership in 'low' fuzzy set."""
-    # TODO: implement triangular MF
-    return 0.3  # dummy
+    """
+    Triangular MF: peak at lo, zero at mid
+    """
+    if x <= lo:
+        return 1.0
+    elif lo < x < mid:
+        return (mid - x) / (mid - lo)
+    else:
+        return 0.0
+
 
 def medium(x, lo, mid, hi):
-    """Returns degree of membership in 'medium' fuzzy set."""
-    # TODO: implement triangular MF
-    return 0.5  # dummy
+    """
+    Triangular MF: peak at mid
+    """
+    if lo < x < mid:
+        return (x - lo) / (mid - lo)
+    elif mid <= x < hi:
+        return (hi - x) / (hi - mid)
+    else:
+        return 0.0
+
 
 def high(x, mid, hi):
-    """Returns degree of membership in 'high' fuzzy set."""
-    # TODO: implement triangular MF
-    return 0.2  # dummy
+    """
+    Triangular MF: zero at mid, peak at hi
+    """
+    if x >= hi:
+        return 1.0
+    elif mid < x < hi:
+        return (x - mid) / (hi - mid)
+    else:
+        return 0.0

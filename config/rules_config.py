@@ -1,12 +1,18 @@
 # Rule definitions as human-readable strings
-# Replace with structured rule objects when building inference engine
 
 RULES = [
+    # HIGH priority
     "IF urgency IS high AND impact IS high THEN priority IS high",
-    "IF urgency IS low AND effort IS high THEN priority IS low",
-    "IF risk IS high AND impact IS medium THEN priority IS high",
+    "IF impact IS high AND effort IS low THEN priority IS high",
+    "IF urgency IS high AND risk IS high THEN priority IS high",
+
+    # MEDIUM priority
     "IF urgency IS medium AND impact IS medium THEN priority IS medium",
-    "IF effort IS low AND impact IS high THEN priority IS high",
-    "IF risk IS low AND urgency IS low THEN priority IS low",
-    # TODO: expand rule base to cover all input combinations
+    "IF impact IS high AND effort IS medium THEN priority IS medium",
+    "IF urgency IS medium AND risk IS medium THEN priority IS medium",
+
+    # LOW priority
+    "IF urgency IS low AND effort IS high THEN priority IS low",
+    "IF impact IS low AND effort IS high THEN priority IS low",
+    "IF urgency IS low AND risk IS low THEN priority IS low",
 ]

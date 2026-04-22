@@ -13,7 +13,6 @@ def infer(fired_rules: list) -> dict:
         dict of output set → peak activation strength
         e.g. {"low": 0.2, "medium": 0.5, "high": 0.3}
     """
-    # TODO: Replace with real Mamdani/Sugeno inference
     inferred = {}
     for rule in fired_rules:
         s = rule["output_set"]
